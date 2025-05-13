@@ -20,9 +20,12 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container d-flex align-items-center justify-content-between">
-        <Link className="navbar-brand" to="/">
-          Pies sobre el <b>bosque</b>
-        </Link>
+      <Link className="navbar-brand text-center" to="/" style={{ lineHeight: "1.1" }}>
+        <div className="d-inline-block">
+          <div>Pies sobre el</div>
+          <div className="fw-bold text-center">bosque</div>
+        </div>
+      </Link>
         <button
           className="navbar-toggler"
           type="button"
