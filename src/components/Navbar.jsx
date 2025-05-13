@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -20,12 +21,19 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container d-flex align-items-center justify-content-between">
-      <Link className="navbar-brand text-center" to="/" style={{ lineHeight: "1.1" }}>
-        <div className="d-inline-block">
-          <div>Pies sobre el</div>
-          <div className="fw-bold text-center">bosque</div>
-        </div>
-      </Link>
+        <Link className="navbar-brand d-flex align-items-center" to="/" style={{ lineHeight: "1.1" }}>
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo-shadow"
+            style={{ height: "120px", marginRight: "10px" }}
+          />
+          <div className="text-center custom-navbar-text">
+            <div>Pies en el</div>
+            <div className="fw-bold">Bosque</div>
+          </div>
+        </Link>
+
         <button
           className="navbar-toggler"
           type="button"
