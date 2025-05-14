@@ -18,3 +18,42 @@
 .custom-navbar-text .fw-bold {
   font-weight: bold;
 }
+
+.animated-logo {
+  width: 250px;
+  opacity: 0;
+  filter: blur(8px);
+  animation: revealLogo 2.5s ease-out forwards;
+}
+
+@keyframes revealLogo {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-subtitle {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5rem;
+  color: #5a3d30;
+  opacity: 0;
+  animation: fadeInText 2s ease-out 2s forwards;
+}
