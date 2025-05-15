@@ -9,6 +9,7 @@ import Proyecto from "./pages/Proyecto";
 import Galeria from "./pages/Galeria";
 import SplashScreen from "./components/SplashScreen";
 
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
 
