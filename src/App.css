@@ -57,3 +57,18 @@
   opacity: 0;
   animation: fadeInText 2s ease-out 2s forwards;
 }
+
+body {
+  background-image: url('/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-footer-bosque {
+  background-color: #f5f0e1; /* beige claro */
+  color: #3b3b3b;
+}

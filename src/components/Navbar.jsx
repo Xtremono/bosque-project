@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container d-flex align-items-center justify-content-between">
         <Link className="navbar-brand d-flex align-items-center" to="/" style={{ lineHeight: "1.1" }}>
           <img
