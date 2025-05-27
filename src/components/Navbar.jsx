@@ -48,13 +48,16 @@ const Navbar = () => {
               <Link className="nav-link" to="/">{t("home")}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">{t("about")}</Link>
+              <Link className="nav-link" to="/pies">{t("What is feet in the forest?")}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/proyecto">{t("project")}</Link>
+              <Link className="nav-link" to="/nosotros">{t("About us")}</Link>
+            </li>
+             <li className="nav-item">
+              <Link className="nav-link" to="/galeria">{t("Gallery")}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/galeria">{t("gallery")}</Link>
+              <Link className="nav-link" to="/guardian">{t("Be the guardian of the forest")}</Link>
             </li>
             <li className="nav-item dropdown">
               <button
