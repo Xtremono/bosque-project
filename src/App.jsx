@@ -1,6 +1,10 @@
+// src/App.jsx
 import './App.css';
+import React, { useEffect, useState } from 'react'; // <--- ASEGÚRATE DE IMPORTAR useEffect
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from 'react';
+import AOS from 'aos';       // <--- IMPORTAR AOS
+import 'aos/dist/aos.css'; // <--- IMPORTAR ESTILOS DE AOS
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Inicio from "./pages/Inicio";
@@ -13,6 +17,15 @@ import SplashScreen from "./components/SplashScreen";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+
+  // <--- AÑADIR ESTE BLOQUE useEffect PARA INICIALIZAR AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duración de la animación (en milisegundos)
+      once: true,    // Si la animación debe ocurrir solo una vez por elemento
+    });
+  }, []); // Array vacío para que se ejecute solo una vez al montar la app
+  // <--- FIN DEL BLOQUE useEffect
 
   return showSplash ? (
     <SplashScreen onFinish={() => setShowSplash(false)} />
