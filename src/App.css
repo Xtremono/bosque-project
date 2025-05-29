@@ -73,3 +73,9 @@ body {
   background-color: #f5f0e1; /* beige claro */
   color: #3b3b3b;
 }
+
+.imagen-responsive {
+  max-width: 100%;
+  height: auto; /* Asegura que la altura se ajuste automáticamente */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+}
