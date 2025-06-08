@@ -1,3 +1,6 @@
+/* src/pages/Inicio.css */
+
+/* Estilos para el logo y sombra */
 .logo-shadow {
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -9,6 +12,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el texto de la barra de navegación */
 .custom-navbar-text {
   font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
@@ -19,6 +23,7 @@
   font-weight: bold;
 }
 
+/* Estilos y animaciones para el logo animado */
 .animated-logo {
   width: 250px;
   opacity: 0;
@@ -39,6 +44,7 @@
   }
 }
 
+/* Animación para el texto de subtítulos */
 @keyframes fadeInText {
   0% {
     opacity: 0;
@@ -58,102 +64,121 @@
   animation: fadeInText 2s ease-out 2s forwards;
 }
 
+/* Estilos para el body de la página (fondo general) */
 body {
-  background-image: url('/fondo.jpg');
+  background-image: url('/fondo.jpg'); /* Ruta de tu imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Elimina el margen por defecto del body */
+  padding: 0; /* Elimina el padding por defecto del body */
   font-family: 'Shadows Into Light', cursive;
+  overflow-x: hidden; /* Previene el scroll horizontal no deseado */
 }
 
+/* Estilos para el footer */
 .bg-footer-bosque {
   background-color: #f5f0e1; /* beige claro */
   color: #3b3b3b;
 }
 
-.imagen-responsive {
-  max-width: 100%;
-  height: auto; /* Asegura que la altura se ajuste automáticamente */
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+/* ======================================================= */
+/* ESTILOS CLAVE PARA LA IMAGEN A ANCHO COMPLETO Y TEXTO */
+/* ======================================================= */
+
+/* Contenedor principal que fuerza el ancho completo del viewport */
+.full-width-image-wrapper {
+  width: 100vw; /* 100% del ancho del viewport */
+  /* Ajusta el margen para contrarrestar cualquier margen/padding del body */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0; /* Asegura que no haya padding interno que reduzca el ancho */
+  overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
+/* Contenedor de la imagen y el texto */
 .image-container {
-    position: relative;
-    /* Opcional: Define un alto mínimo si la imagen es solo de fondo y necesitas el contenedor para una altura específica. */
-    /* min-height: 500px; */
-    /* Esto es importante para que el texto se centre respecto a un área consistente */
+  position: relative; /* Necesario para posicionar el texto superpuesto */
+  width: 100%; /* Ocupa todo el ancho de su padre (.full-width-image-wrapper) */
+  height: 60vh; /* Define la altura del contenedor de la imagen. Puedes ajustar este valor */
+  /* Ejemplo de otras alturas que puedes usar: */
+  /* height: 500px; */ /* Altura fija */
+  /* height: 70vh; */ /* 70% de la altura del viewport */
+  /* max-height: 700px; */ /* Altura máxima */
+  overflow: hidden; /* Recorta la imagen si se desborda del contenedor */
 }
 
+/* La imagen en sí */
+.imagen-responsive {
+  width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+  height: 100%; /* La imagen ocupa el 100% de la altura de su contenedor */
+  object-fit: cover; /* Recorta la imagen para cubrir el espacio sin distorsión */
+  display: block; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+/* Contenedor del texto superpuesto */
 .overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    /* Fondo semi-transparente para mejorar la legibilidad del texto */
-    /* ¡CAMBIO AQUÍ! Se ha reducido la opacidad a 0.2 */
-    background-color: rgba(0, 0, 0, 0.2); /* Negro semi-transparente, menos opaco */
-
-    /* Para centrar el contenido (h1, h2, p) con Flexbox */
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-
-    /* Para que el texto sea visible (no quede oculto por debajo) */
-    z-index: 2;
-
-    /* Si no quieres que el texto "capture" clicks (útil si hay botones debajo de la imagen) */
-    /* pointer-events: none; */
+  position: absolute; /* Posicionamiento absoluto sobre la imagen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente para legibilidad */
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  text-align: center; /* Centra el texto dentro de cada elemento */
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+  padding: 20px; /* Añade un padding general para el texto */
 }
 
 /* Estilos para el título principal */
 .overlay-text .main-title {
-    font-size: 4em;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-    margin-bottom: 0.5em; /* Espacio debajo del título */
-    text-align: center;
-    /* max-width: 80%; /* Opcional: limita el ancho para textos muy largos */
+  font-size: 4em; /* Tamaño de fuente grande */
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); /* Sombra para el texto */
+  margin-bottom: 0.5em; /* Espacio debajo del título */
+  text-align: center;
 }
 
-/* Estilos para el nuevo subtítulo h2 */
+/* Estilos para el subtítulo h2 */
 .overlay-text .overlay-h2 {
-    font-size: 2em; /* Un tamaño más pequeño que el h1 */
-    color: #F0F0F0; /* Un blanco más suave */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 1em; /* Espacio debajo del h2 */
-    text-align: center;
-    max-width: 80%; /* Asegura que no se extienda demasiado */
+  font-size: 2em;
+  color: #F0F0F0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1em;
+  text-align: center;
+  max-width: 80%; /* Limita el ancho para mejor lectura */
 }
 
-/* Estilos para el nuevo párrafo más largo */
+/* Estilos para el párrafo */
 .overlay-text .overlay-p {
-    font-size: 1.2em; /* Tamaño de fuente normal para el párrafo */
-    color: #DDDDDD; /* Un blanco aún más suave */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    line-height: 1.6; /* Mejora la legibilidad de párrafos largos */
-    padding: 0 15%; /* Añade un poco de padding horizontal para que el texto no toque los bordes */
-    margin-bottom: 1em; /* Espacio debajo del párrafo */
-    text-align: center;
-    max-width: 90%; /* Limita el ancho del párrafo para que no sea una línea muy larga */
+  font-size: 1.2em;
+  color: #DDDDDD;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  line-height: 1.6; /* Mejora la legibilidad */
+  padding: 0 15%; /* Padding horizontal para que el texto no toque los bordes */
+  margin-bottom: 1em;
+  text-align: center;
+  max-width: 90%; /* Limita el ancho del párrafo */
 }
 
-/* Puedes añadir media queries aquí si quieres ajustar el tamaño de la fuente para pantallas pequeñas */
+/* Media Queries para responsividad (ajuste en pantallas pequeñas) */
 @media (max-width: 768px) {
-    .overlay-text .main-title {
-        font-size: 2.5em;
-    }
-    .overlay-text .overlay-h2 {
-        font-size: 1.5em;
-    }
-    .overlay-text .overlay-p {
-        font-size: 1em;
-        padding: 0 5%;
-    }
+  .overlay-text .main-title {
+    font-size: 2.5em;
+  }
+  .overlay-text .overlay-h2 {
+    font-size: 1.5em;
+  }
+  .overlay-text .overlay-p {
+    font-size: 1em;
+    padding: 0 5%; /* Ajusta el padding para pantallas pequeñas */
+  }
+  .image-container {
+    height: 50vh; /* Puedes ajustar la altura para móviles */
+  }
 }
